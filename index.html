@@ -14,6 +14,9 @@ and open the template in the editor.
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+
         <style>
 
             div#contatore {
@@ -37,7 +40,7 @@ and open the template in the editor.
     <body>
         <div class="container">
             <div class="jumbotron">
-                <h1 class="display-4">Conta da 1 a 10</h1>
+                <h1 class="display-4">Conta da 1 a 10 circolare </h1>
 
             </div>
             <div class="row justify-content-center">
@@ -54,9 +57,9 @@ and open the template in the editor.
                     </div>
                     <nav aria-label="Page navigation example">
                         <ul class="pagination">
-                            <li class="page-item" ><button class="page-link"  id="previus" href="#">Previous</button></li>
+                            <li class="page-item" ><button class="page-link"  id="previus" href="#"><i class="fas fa-arrow-left"></i> Previous</button></li>
 
-                            <li class="page-item"><button class="page-link" id="next" href="#">Next</button></li>
+                            <li class="page-item"><button class="page-link" id="next" href="#">Next <i class="fas fa-arrow-right"></i></button></li>
                         </ul>
                     </nav>
 
@@ -77,20 +80,24 @@ and open the template in the editor.
             function goPrevius() {
                 if (contatore > 0) {
                     contatore = contatore - 1;
-                    refresh();
+                   
+                }else{
+                    contatore = 10;
                 }
-
-            }
-            ;
+                refresh();
+            };
 
             function goNext() {
                 if (contatore < 10) {
                     contatore = contatore + 1;
-                    refresh();
+                   
+                }else{
+                    contatore = 1
                 }
                 
                 refresh();
-            }
+            };
+            
             
 
 
@@ -98,8 +105,7 @@ and open the template in the editor.
                 console.log(contatore);
                 contatore_div.innerHTML = contatore;
 
-            }
-            ;
+            };
 
 
 
